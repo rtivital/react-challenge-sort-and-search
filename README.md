@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# react-challenge-sort-and-search
-Пилотный выпуск React Challenge: сортировка и поиск данных
-=======
 # Пилотный выпуск React Challenge: сортировка и поиск данных
 
 [Статья на сайте](http://jsraccoon.ru/react-challenge-sort-and-search)
@@ -23,4 +19,3 @@
 * Деплой (`gulp deploy`): пушит всё, что находится в папке `public` в ветку `gh-pages`. В результате сайт можно показать другу
 
 ## Удачи!
->>>>>>> d0da9c8c689c5fa7ff34518f608fe83361807323
