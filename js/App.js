@@ -1,71 +1,10 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-import UserList from './components/UserList';
-import load from './utils/load';
-import Searchbar from './components/Searchbar';
-import ActiveUser from './components/ActiveUser';
-import Toolbar from './components/Toolbar';
-=======
 import Button from './components/Button';
 
->>>>>>> d0da9c8c689c5fa7ff34518f608fe83361807323
 
 export default class App extends Component {
   constructor(props) {
     super(props);
-<<<<<<< HEAD
-
-    this.state = {
-      data: null,
-      active: 0,
-      term: ''
-    };
-
-    this.loadData();
-  }
-
-  loadData() {
-    load(this.props.data).then(users => {
-      this.initialData = JSON.parse(users);
-      this.setState({
-        data: this.initialData
-      });
-    });
-  }
-
-  updateData(config) {
-    this.setState(config);
-  }
-
-  render() {
-    return (
-      <div className="app container-fluid">
-        <div className="row">
-          <div className="col-sm-12">
-            <Searchbar
-              term={this.state.term}
-              data={this.initialData}
-              update={this.updateData.bind(this)}
-            />
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-sm-12">
-            <Toolbar initialData={this.initialData} data={this.state.data} update={this.updateData.bind(this)} />
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-sm-4 col-md-3 col-lg-2">
-            <ActiveUser data={this.state.data} active={this.state.active} />
-          </div>
-          <div className="col-sm-8 col-md-9 col-lg-10">
-            <UserList data={this.state.data} update={this.updateData.bind(this)} />
-          </div>
-        </div>
-
-=======
     this.state = {
       phrase: 'Нажми на кнопку!',
       count: 0
@@ -107,7 +46,6 @@ export default class App extends Component {
       <div className="container app">
         <Button count={this.state.count} update={this.updateBtn.bind(this)} />
         <p style={{marginTop: 2 + 'rem'}}>{this.state.phrase}</p>
->>>>>>> d0da9c8c689c5fa7ff34518f608fe83361807323
       </div>
     );
   }
