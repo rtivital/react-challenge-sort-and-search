@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+<<<<<<< HEAD
 export default class Button extends Component {
   constructor() {
     super();
@@ -21,3 +22,15 @@ export default class Button extends Component {
     );
   }
 }
+=======
+const Button = ({count, update}) => {
+  return (
+    <button className="btn btn-default" onClick={update}>
+      Кнопка была нажата {count} раз
+    </button>
+  );
+}
+
+
+export default Button;
+>>>>>>> d0da9c8c689c5fa7ff34518f608fe83361807323
