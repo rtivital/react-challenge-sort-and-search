@@ -10,7 +10,8 @@ register(gulp, plugins, config)([
   'build-scss',
   'copy',
   'serve',
-  'watch'
+  'watch',
+  'deploy'
 ]);
 
 gulp.task('build', gulp.parallel('build-js', 'build-scss', 'copy'));

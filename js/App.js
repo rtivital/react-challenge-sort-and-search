@@ -1,42 +1,64 @@
 import React, { Component } from 'react';
-import Button from './components/Button';
-
+import UserList from './components/UserList';
+import load from './utils/load';
+import Searchbar from './components/Searchbar';
+import ActiveUser from './components/ActiveUser';
+import Toolbar from './components/Toolbar';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      phrase: 'Нажми на кнопку!',
-      count: 0
+      data: null,
+      active: 0,
+      term: ''
     };
+
+    this.loadData();
   }
 
-  updateBtn() {
-    const phrases = [
-      'ЖМИ!', 'Не останавливайся!',
-      'У тебя хорошо получается!', 'Красавчик!',
-      'Вот это и есть React!', 'Продолжай!',
-      'Пока ты тут нажимаешь кнопку другие работают!',
-      'Всё хватит!', 'Ну и зачем ты нажал?',
-      'В следующий раз тут будет полезный совет',
-      'Ты нажал кнопку столько раз, что обязан на ней жениться',
-      'coub про кота-джедая: http://coub.com/view/spxn',
-      'Дальнобойщики на дороге ярости: http://coub.com/view/6h0dy',
-      'Реакция коллег на ваш код: http://coub.com/view/5rjjw',
-      'Енот ворует еду: http://coub.com/view/xi3cio',
-      'Российский дизайн: http://coub.com/view/16adw5i0'
-    ];
-    this.setState({
-      count: this.state.count + 1,
-      phrase: phrases[parseInt(Math.random() * phrases.length)]
+  loadData() {
+    load(this.props.data).then(users => {
+      this.initialData = JSON.parse(users);
+      this.setState({
+        data: this.initialData
+      });
     });
+  }
+
+  updateData(config) {
+    this.setState(config);
   }
 
   render() {
     return (
-      <div className="container app">
-        <Button count={this.state.count} update={this.updateBtn.bind(this)} />
-        <h1>{this.state.phrase}</h1>
+      <div className="app container-fluid">
+        <div className="row">
+          <div className="col-sm-12">
+            <Searchbar
+              term={this.state.term}
+              data={this.initialData}
+              update={this.updateData.bind(this)}
+            />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-sm-12">
+            <Toolbar initialData={this.initialData} data={this.state.data} update={this.updateData.bind(this)} />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-sm-4 col-md-3 col-lg-2">
+            <ActiveUser data={this.state.data} active={this.state.active} />
+          </div>
+          <div className="col-sm-8 col-md-9 col-lg-10">
+            <UserList data={this.state.data} update={this.updateData.bind(this)} />
+          </div>
+        </div>
+
       </div>
     );
   }
