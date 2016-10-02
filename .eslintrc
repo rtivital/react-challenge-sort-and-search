@@ -20,6 +20,7 @@
     "no-confusing-arrow": 0,
     "no-plusplus": 0,
     "new-cap": 0,
+    "global-require": 0,
   },
 
   "settings": {
