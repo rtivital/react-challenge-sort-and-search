@@ -1,0 +1,28 @@
+@import '~normalize-scss/sass/normalize';
+@include normalize();
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6em;
+  line-height: 1.6;
+  font-family: 'Open Sans', sans-serif;
+  color: $color-black;
+}
+
+a {
+  color: #3498DB;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}

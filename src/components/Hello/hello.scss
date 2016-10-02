@@ -1,0 +1,40 @@
+.hello-card {
+  @include center(90rem);
+  padding: 2.5rem;
+  padding-left: 0;
+  display: flex;
+
+  background-color: #fff;
+  box-shadow: 0 .3rem .6rem rgba(0, 0, 0, 0.25);
+}
+
+.hello-card__image {
+  width: 20%;
+  border-right: .1rem solid #e5e5e5;
+  margin-right: 2rem;
+}
+
+.hello-card__caption {
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  text-align: center;
+  margin-top: 1rem;
+  color: #535353;
+}
+
+.hello-card__message {
+  flex: 1;
+}
+
+.hello-card__title {
+  color: #2C3E50;
+  font-family: 'Roboto', serif;
+  line-height: .7;
+  // letter-spacing: -.2rem;
+  font-size: 2.8rem;
+  padding-bottom: 1.8rem;
+  margin: 0;
+  border-bottom: .1rem solid #e5e5e5;
+  margin-bottom: 2rem;
+}
