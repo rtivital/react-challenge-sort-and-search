@@ -112,6 +112,7 @@ export default {
     : [
       'webpack-dev-server/client?http://localhost:3000',
       'webpack/hot/only-dev-server',
+      'react-hot-loader/patch',
       'babel-polyfill',
       './src/index',
     ],
