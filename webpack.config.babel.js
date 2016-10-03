@@ -54,13 +54,13 @@ const loaders = [
 // Plugins used in all builds
 const pluginsBase = [
   new HtmlWebpackPlugin({
-    title: 'Colorizr',
+    title: 'Sort and Search',
     template: 'template.ejs',
   }),
 
   new FaviconsWebpackPlugin({
     logo: './favicon.png',
-    background: '#119ce5',
+    background: '#ECF0F1',
     icons: {
       android: false,
       appleIcon: false,
