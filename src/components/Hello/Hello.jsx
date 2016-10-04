@@ -1,17 +1,14 @@
 import React from 'react';
 import Card from './Card';
 import './hello.scss';
-import raccoon from './content/intro.md';
+import content from './content';
 
-const Hello = () => (
-  <div className="entry">
-    <Card
-      image="raccoon"
-      caption="Енот-мудрец, использующий React. Объяснит ситуацию."
-      title="Добро пожаловать в мир React, юный енот!"
-      content={raccoon}
-    />
-  </div>
-);
+const Hello = () => {
+  const data = content.map(
+    (part, index) => <Card {...part} key={`${index}-${part.image}`} />
+  );
+
+  return <div className="entry">{data}</div>;
+};
 
 export default Hello;
