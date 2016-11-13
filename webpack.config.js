@@ -44,6 +44,10 @@ const loaders = [
     include: path.join(__dirname, 'src'),
     exclude: path.join(__dirname, 'src/ui/Icon'),
   },
+
+  {
+    test: /\.md$/, loaders: ['html', 'markdown'],
+  },
 ];
 
 // Plugins used in all builds
