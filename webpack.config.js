@@ -46,7 +46,7 @@ const loaders = [
   },
 
   {
-    test: /\.md$/, loaders: ['html', 'markdown'],
+    test: /\.md$/, loader: ['html', 'markdown'],
   },
 ];
 
