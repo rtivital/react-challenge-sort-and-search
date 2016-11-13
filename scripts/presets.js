@@ -2,19 +2,16 @@ const dream = require('dreamjs');
 const jsonfile = require('jsonfile');
 const uuid = require('node-uuid');
 const mkdirp = require('mkdirp');
-const glob = require('glob');
-const path = require('path');
-
 
 const config = {
   path: './public/data.json',
   amount: 150,
   phraseLength: 10,
-  images: glob.sync('./images/*.svg').map(file => path.basename(file).replace(/\.svg/g, '')),
+  images: ['cat', 'dog', 'fox', 'koala', 'lion', 'owl', 'penguin', 'pig', 'raccoon', 'sheep'],
 };
 
-dream.customType('user-image', (helper) => helper.oneOf(config.images));
-dream.customType('user-phrase', (helper) => helper.chance.sentence({ words: config.phraseLength }));
+dream.customType('user:image', (helper) => helper.oneOf(config.images));
+dream.customType('user:phrase', (helper) => helper.chance.sentence({ words: config.phraseLength }));
 dream.customType('randomId', uuid.v4);
 
 dream.schema('user', {
@@ -22,8 +19,8 @@ dream.schema('user', {
   name: 'name',
   age: 'age',
   phone: 'phone',
-  image: 'user-image',
-  phrase: 'user-phrase',
+  avatar: 'user:image',
+  phrase: 'user:phrase',
 });
 
 mkdirp('./public', (err) => {
