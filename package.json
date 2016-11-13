@@ -4,7 +4,6 @@
   "description": "Boilerplate for first React Challenge",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint",
     "build": "npm run gh:build",
     "deploy": "npm run gh:deploy",
     "presets": "node scripts/presets",
