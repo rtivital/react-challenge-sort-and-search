@@ -1,0 +1,18 @@
+.user-list {
+  background-color: $color-white;
+}
+
+.user-list__avatar {
+  max-height: 8rem;
+}
+
+.user-list__table {
+  width: 100%;
+  border: .1rem solid $color-light-gray;
+  border-collapse: collapse;
+
+  td, th {
+    padding: 1rem 2rem;
+    border: .1rem solid $color-light-gray;
+  }
+}

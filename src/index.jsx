@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import App from './components/App/App';
+import '../node_modules/normalize.css/normalize.css';
 import './styles/index.scss';
 
 const rootElement = document.getElementById('app');

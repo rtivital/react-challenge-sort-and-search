@@ -1,11 +1,40 @@
-import React from 'react';
-import Hello from '../Hello/Hello';
+import React, { Component } from 'react';
+import axios from 'axios';
+import UserList from '../UserList/UserList';
 import './app.scss';
 
-const App = () => (
-  <div className="app">
-    <Hello />
-  </div>
-);
+export default class App extends Component {
+  constructor() {
+    super();
 
-export default App;
+    this.state = {
+      data: [],
+      active: null,
+      searchTerm: '',
+      serchResults: [],
+      sortOrder: 'straight',
+      sortType: 'alphabetical',
+    };
+  }
+
+  componentDidMount() {
+    axios.get('./data.json').then((response) => {
+      this.setState({ data: response.data });
+    });
+  }
+
+  handleActiveUserSelection = (item) => {
+    this.setState({ active: item });
+  }
+
+  render() {
+    const { data } = this.state;
+    return (
+      <div className="app">
+        {data.length > 0 && (
+          <UserList data={this.state.data} onItemClick={this.handleActiveUserSelection} />
+        )}
+      </div>
+    );
+  }
+}
