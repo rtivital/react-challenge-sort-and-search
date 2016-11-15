@@ -15,9 +15,7 @@ export default class App extends Component {
       sortOrder: 'straight',
       sortType: 'alphabetical',
     };
-  }
 
-  componentDidMount() {
     axios.get('./data.json').then((response) => {
       this.setState({ data: response.data });
     });
