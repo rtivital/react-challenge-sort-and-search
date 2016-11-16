@@ -2,3 +2,15 @@
   background-color: $color-black-gray;
   min-height: 100vh;
 }
+
+.layout {
+  background-color: $color-white;
+  @include center(100rem);
+
+  display: flex;
+  padding: 2rem;
+}
+
+.main {
+  flex: 1;
+}
