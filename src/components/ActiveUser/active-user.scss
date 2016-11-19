@@ -1,0 +1,54 @@
+.active-user, .active-user-placeholder {
+  width: 25rem;
+  padding: 2rem;
+  padding-top: 0;
+}
+
+.active-user-placeholder__title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -.15rem;
+  margin: 0;
+  line-height: 1;
+}
+
+.active-user-placeholder__mark {
+  margin-top: 3rem;
+  user-select: none;
+  background-color: $color-wet-asphalt;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 20rem;
+  text-align: center;
+  line-height: 19.5rem;
+  font-size: 10rem;
+  font-weight: bold;
+  color: $color-white;
+  text-shadow: 0 0 3rem rgba(0, 0, 0, .75);
+}
+
+.active-user__avatar {
+  max-width: 12rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.active-user__stats {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: .1rem solid $color-light-gray;
+  font-size: .9em;
+}
+
+.active-user__stat {
+  display: flex;
+  justify-content: space-between;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+.active-user__title {
+  font-weight: bold;
+  text-transform: capitalize;
+}

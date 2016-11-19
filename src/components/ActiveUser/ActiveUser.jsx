@@ -15,10 +15,6 @@ UserStat.propTypes = {
 };
 
 const ActiveUser = ({ data }) => {
-  if (!data) {
-    return <ActiveUserPlaceHolder />;
-  }
-
   const { avatar, name, age, phone } = data;
 
   return (
