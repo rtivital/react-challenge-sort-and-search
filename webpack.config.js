@@ -35,14 +35,14 @@ const loaders = [
   { // svg sprites generated only for icons
     test: /\.svg$/,
     loader: `svg-sprite?${JSON.stringify({ name: '[hash]', prefixize: true })}`,
-    include: path.join(__dirname, 'src/ui/Icon'),
+    include: path.join(__dirname, 'src/components/Icon'),
   },
 
   { // other svg images will processed as normal
     test: /\.svg$/,
     loader: 'file',
     include: path.join(__dirname, 'src'),
-    exclude: path.join(__dirname, 'src/ui/Icon'),
+    exclude: path.join(__dirname, 'src/components/Icon'),
   },
 
   {

@@ -19,12 +19,15 @@
   width: 20rem;
   height: 20rem;
   border-radius: 20rem;
-  text-align: center;
-  line-height: 19.5rem;
-  font-size: 10rem;
-  font-weight: bold;
-  color: $color-white;
-  text-shadow: 0 0 3rem rgba(0, 0, 0, .75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    width: 15rem;
+    height: 15rem;
+    fill: $color-white;
+  }
 }
 
 .active-user__avatar {
