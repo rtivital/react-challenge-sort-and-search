@@ -31,15 +31,18 @@ export default class App extends Component {
     return (
       <div className="app">
         {data.length > 0 && (
-          <div className="layout">
-            {active && (
-              <aside className="sidebar">
-                <ActiveUser data={active} />
-              </aside>
-            )}
-            <main className="main">
-              <UserList data={data} onItemClick={this.handleActiveUserSelection} />
-            </main>
+          <div className="app__inner">
+            <h1 className="app__title">React Challenge: Sort and Search</h1>
+            <div className="layout">
+              {active && (
+                <aside className="sidebar">
+                  <ActiveUser data={active} />
+                </aside>
+              )}
+              <main className="main">
+                <UserList data={data} onItemClick={this.handleActiveUserSelection} />
+              </main>
+            </div>
           </div>
         )}
       </div>

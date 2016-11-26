@@ -2,16 +2,26 @@
   background-color: $color-wet-asphalt;
   min-height: 100vh;
   padding-top: 12rem;
+  padding-bottom: 12rem;
+}
+
+.app__inner {
+  @include center(100rem);
+  background-color: $color-white;
+  padding: 2rem 4rem;
+  border-radius: .3rem;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, .5);
+}
+
+.app__title {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2rem;
+  font-weight: 300;
 }
 
 .layout {
-  @include center(100rem);
-
   display: flex;
-  padding: 2rem;
-  background-color: $color-white;
-  border-radius: .3rem;
-  box-shadow: 0 0 2rem rgba(0, 0, 0, .5);
 }
 
 .main {
