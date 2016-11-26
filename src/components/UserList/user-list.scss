@@ -16,3 +16,11 @@
     border: .1rem solid $color-light-gray;
   }
 }
+
+.user-list__user {
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-white-gray;
+  }
+}

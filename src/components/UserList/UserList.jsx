@@ -3,7 +3,7 @@ import Avatar from '../Avatar/Avatar';
 import './user-list.scss';
 
 const ListItem = ({ item, onClick }) => (
-  <tr onClick={() => onClick(item)}>
+  <tr onClick={() => onClick(item)} className="user-list__user">
     <td><Avatar image={item.avatar} className="user-list__avatar" /></td>
     <td>{item.name}</td>
     <td>{item.age}</td>
