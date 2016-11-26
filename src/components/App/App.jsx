@@ -32,9 +32,11 @@ export default class App extends Component {
       <div className="app">
         {data.length > 0 && (
           <div className="layout">
-            <aside className="sidebar">
-              {active ? <ActiveUser data={active} /> : <ActiveUserPlaceholder />}
-            </aside>
+            {active && (
+              <aside className="sidebar">
+                <ActiveUser data={active} />
+              </aside>
+            )}
             <main className="main">
               <UserList data={data} onItemClick={this.handleActiveUserSelection} />
             </main>
