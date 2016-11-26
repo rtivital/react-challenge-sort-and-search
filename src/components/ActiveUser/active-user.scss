@@ -1,33 +1,7 @@
-.active-user, .active-user-placeholder {
+.active-user {
   width: 25rem;
   padding: 2rem;
   padding-top: 0;
-}
-
-.active-user-placeholder__title {
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: -.15rem;
-  margin: 0;
-  line-height: 1;
-}
-
-.active-user-placeholder__mark {
-  margin-top: 3rem;
-  user-select: none;
-  background-color: $color-wet-asphalt;
-  width: 20rem;
-  height: 20rem;
-  border-radius: 20rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .icon {
-    width: 15rem;
-    height: 15rem;
-    fill: $color-white;
-  }
 }
 
 .active-user__avatar {

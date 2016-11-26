@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import UserList from '../UserList/UserList';
-import { ActiveUser, ActiveUserPlaceholder } from '../ActiveUser';
+import { ActiveUser } from '../ActiveUser';
 import './app.scss';
 
 export default class App extends Component {
