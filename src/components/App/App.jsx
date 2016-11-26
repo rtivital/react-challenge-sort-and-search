@@ -11,10 +11,6 @@ export default class App extends Component {
     this.state = {
       data: [],
       active: null,
-      searchTerm: '',
-      serchResults: [],
-      sortOrder: 'straight',
-      sortType: 'alphabetical',
     };
 
     axios.get('./data.json').then((response) => {
