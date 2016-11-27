@@ -11,10 +11,9 @@
     "lint": "npm run lint:eslint-fix",
     "start": "npm run presets && cross-env NODE_ENV=development node scripts/start",
     "start:storybook": "start-storybook -p 3003 -c storybook",
-    "build:storybook": "build-storybook -c storybook -o public/storybook",
     "lint:eslint": "eslint src --ext .js --ext .jsx",
     "lint:eslint-fix": "eslint src --ext .js --ext .jsx --fix",
-    "gh:build": "npm run clean && npm run presets && npm run build:storybook && cross-env NODE_ENV=production BUILD=pages webpack --progress --colors",
+    "gh:build": "npm run clean && npm run presets && cross-env NODE_ENV=production BUILD=pages webpack --progress --colors",
     "gh:deploy": "npm run gh:build && gh-pages -d public"
   },
   "repository": {
