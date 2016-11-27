@@ -1,10 +1,12 @@
 {
   "parser": "babel-eslint",
   "extends": "airbnb",
+
   "env": {
     "browser": true,
     "node": true
   },
+
   "rules": {
     "linebreak-style": 0,
     "import/prefer-default-export": 0,
@@ -25,10 +27,4 @@
     "jsx-a11y/no-static-element-interactions": 0,
     "react/no-unused-prop-types": [2, { "skipShapeProps": true }],
   },
-
-  "settings": {
-    "import/resolver": {
-      "babel-module": {}
-    }
-  }
 }
