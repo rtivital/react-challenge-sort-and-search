@@ -1,6 +1,6 @@
 const dream = require('dreamjs');
 const jsonfile = require('jsonfile');
-const uuid = require('node-uuid');
+const uuid = require('uuid');
 const mkdirp = require('mkdirp');
 
 const config = {
