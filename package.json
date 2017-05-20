@@ -30,9 +30,9 @@
   },
   "homepage": "https://github.com/rtivital/react-challenge-sort-and-search#readme",
   "dependencies": {
-    "axios": "^0.14.0",
+    "axios": "^0.16.1",
     "classnames": "^2.2.5",
-    "normalize.css": "^5.0.0",
+    "normalize.css": "^7.0.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
