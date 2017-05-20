@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 import Avatar from '../Avatar/Avatar';
 import './user-list.scss';
 
-const ListItem = ({ item, onClick }) => (
-  <tr onClick={() => onClick(item)} className="user-list__user">
-    <td><Avatar image={item.avatar} className="user-list__avatar" /></td>
-    <td>{item.name}</td>
-    <td>{item.age}</td>
-    <td>{item.phone}</td>
-  </tr>
-);
+function ListItem({ item, onClick }) {
+  return (
+    <tr onClick={() => onClick(item)} className="user-list__user">
+      <td><Avatar image={item.avatar} className="user-list__avatar" /></td>
+      <td>{item.name}</td>
+      <td>{item.age}</td>
+      <td>{item.phone}</td>
+    </tr>
+  );
+}
 
 ListItem.propTypes = {
   onClick: PropTypes.func.isRequired,
@@ -22,7 +24,7 @@ ListItem.propTypes = {
   }).isRequired,
 };
 
-const UserList = ({ data, onItemClick }) => {
+export default function UserList({ data, onItemClick }) {
   const items = data.map(
     (item) => <ListItem item={item} onClick={onItemClick} key={item.id} />
   );
@@ -42,11 +44,9 @@ const UserList = ({ data, onItemClick }) => {
       </table>
     </div>
   );
-};
+}
 
 UserList.propTypes = {
   data: PropTypes.array.isRequired,
   onItemClick: PropTypes.func.isRequired,
 };
-
-export default UserList;
