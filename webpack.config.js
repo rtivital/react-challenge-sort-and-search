@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
@@ -9,9 +8,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const production = process.env.NODE_ENV === 'production';
 const pagesBuild = process.env.BUILD === 'pages';
 
-/*********************************** Loaders ***********************************/
 const loaders = [
-  { // react-hot is implemented as babel plugin now
+  {
     test: /\.(js|jsx)$/,
     loader: 'babel',
     include: path.join(__dirname, 'src'),
@@ -42,10 +40,6 @@ const loaders = [
     loader: 'file',
     include: path.join(__dirname, 'src'),
     exclude: path.join(__dirname, 'src/components/Icon'),
-  },
-
-  {
-    test: /\.md$/, loader: ['html', 'markdown'],
   },
 ];
 
@@ -106,20 +100,12 @@ const productionPlugins = [
   }),
 ];
 
-module.exports.loaders = loaders;
-module.exports.plugins = {
-  base: pluginsBase,
-  development: developmentPlugins,
-  production: productionPlugins,
-};
-
 module.exports = {
   devtool: production ? 'cheap-module-source-map' : 'eval',
 
   entry: production
     ? ['babel-polyfill', './src/index']
     : [
-      'react-hot-loader/patch',
       'webpack-dev-server/client?http://localhost:3002',
       'webpack/hot/only-dev-server',
       'babel-polyfill',
@@ -143,6 +129,5 @@ module.exports = {
   module: { loaders },
   plugins: production ? productionPlugins : developmentPlugins,
 
-  sassResources: ['./src/styles/variables.scss', './src/styles/mixins.scss'],
-  postcss: [autoprefixer({ browsers: ['last 4 versions'] })],
+  // sassResources: ['./src/styles/variables.scss', './src/styles/mixins.scss'],
 };
